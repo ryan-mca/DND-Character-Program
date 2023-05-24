@@ -40,4 +40,17 @@ class Character:
         self.intSilver = intSilver
         self.intGold = intGold
 
+def clear():
+    os.system("cls" if os.name == "nt" else "clear")
+
 def rollDice():
+    clear
+    while True:
+        try:
+            intChoice = int(input("How many sides should the dice have? "))
+
+            intRoll = random.randint(1, intChoice)
+            print(f"You rolled: {intRoll}")
+        except ValueError:
+            clear()
+            print("Please input a number!")

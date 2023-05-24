@@ -14,7 +14,12 @@ class Character:
         self.intGold = intGold
 
     def __str__(self):
-        return f"---------------\n{self.strName} the {self.strTitle}\nStrength: {self.intStrength}\nCharisma: {self.intRizz}\nDexterity: {self.intDexterity}\n---------------"
+        return ("---------------\n"
+                f"{self.strName} the {self.strTitle}\n"
+                f"Strength: {self.intStrength}\n"
+                f"Charisma: {self.intRizz}\n"
+                f"Dexterity: {self.intDexterity}\n"
+                "---------------")
 
     def displayMoney(self):
         print("You currently have:")
@@ -127,11 +132,25 @@ def rollDice():
     clear()
     while True:
         try:
-            intChoice = int(input("How many sides should the dice have? "))
+            # Gets the Amount of dice
+            listDiceSides = []
+            listRolledNums = []
+            intDiceAmount = int(input("How many dice do you want to roll? "))
 
-            intRoll = random.randint(1, intChoice)
+            # Gets the amount of sides on each dice
+            for _ in range(0, intDiceAmount):
+                listDiceSides.append(int(input("How many sides should the dice have? ")))
+
+            # Generates a random number for each dice
+            for i in range(0, intDiceAmount):
+                listRolledNums.append(random.randint(1, listDiceSides[i]))
+
+            # Prints the rolled numbers
             clear()
-            print(f"You rolled: {intRoll}")
+            print("You rolled:")
+            for i in range(0, intDiceAmount):
+                print(f"Die {i + 1}: {listRolledNums[i]}")
+
             break
         except ValueError:
             clear()

@@ -3,39 +3,41 @@ import os
 import random
 
 class Character:
-    def __init__(self, name, title, strength, rizz, dexterity):
-        self.name = name
-        self.title = title
-        self.strength = strength
-        self.rizz = rizz
-        self.dexterity = dexterity
-        self.copper = 0
-        self.silver = 0
-        self.gold = 0
+    def __init__(self, strName, strTitle, intStrength, intRizz, intDexterity):
+        self.strName = strName
+        self.strTitle = strTitle
+        self.intStrength = intStrength
+        self.intRizz = intRizz
+        self.intDexterity = intDexterity
+        self.intCopper = 0
+        self.intSilver = 0
+        self.intGold = 0
 
     def __str__(self):
-        print(f"{self.name} the {self.title}")
-        print(f"Strength: {self.strength}")
-        print(f"Charisma: {self.rizz}")
-        print(f"Dexterity: {self.dexterity}")
+        print(f"{self.strName} the {self.strTitle}")
+        print(f"Strength: {self.intStrength}")
+        print(f"Charisma: {self.intRizz}")
+        print(f"Dexterity: {self.intDexterity}")
 
     def displayMoney(self):
         print("You currently have:")
-        print(f"Copper: {self.copper}")
-        print(f"Silver: {self.silver}")
-        print(f"Gold: {self.gold}")
+        print(f"Copper: {self.intCopper}")
+        print(f"Silver: {self.intSilver}")
+        print(f"Gold: {self.intGold}")
 
-    def addMoney(self, copper, silver, gold):
-        self.copper += copper
-        self.silver += silver
-        self.gold += gold
+    def addMoney(self, intCopper, intSilver, intGold):
+        self.intCopper += intCopper
+        self.intSilver += intSilver
+        self.intGold += intGold
 
-    def loadFromFile(self, name, title, strength, rizz, dexterity, copper, silver, gold):
-        self.name = name
-        self.title = title
-        self.strength = strength
-        self.rizz = rizz
-        self.dexterity = dexterity
-        self.copper = copper
-        self.silver = silver
-        self.gold = gold
+    def loadFromFile(self, strName, strTitle, intStrength, intRizz, intDexterity, intCopper, intSilver, intGold):
+        self.strName = strName
+        self.strTitle = StrTtitle
+        self.intStrength = intStrength
+        self.intRizz = intRizz
+        self.intDexterity = intDexterity
+        self.intCopper = intCopper
+        self.intSilver = intSilver
+        self.intGold = intGold
+
+def rollDice():
